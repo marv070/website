@@ -26,66 +26,16 @@ a:hover:not(.active) {
 background-color:#0000FF;
 }
 </style>
-<script language="JavaScript1.1">
-<!--
-/*
-JavaScript Image slideshow:
-By JavaScript Kit (www.javascriptkit.com)
-Over 200+ free JavaScript here!
-*/
-var slideimages=new Array()
-var slidelinks=new Array()
-function slideshowimages(){
-for (i=0;i<slideshowimages.arguments.length;i++){
-slideimages[i]=new Image()
-slideimages[i].src=slideshowimages.arguments[i]
-}
-}
-function slideshowlinks(){
-for (i=0;i<slideshowlinks.arguments.length;i++)
-slidelinks[i]=slideshowlinks.arguments[i]
-}
-function gotoshow(){
-if (!window.winslide||winslide.closed)
-winslide=window.open(slidelinks[whichlink])
-else
-winslide.location=slidelinks[whichlink]
-winslide.focus()
-}
-//-->
-</script>
+
 </head>
-<body bgcolor="#C0C0C0">
+<body bgcolor="#3399FF">
 <ul>
   <li><a href="http://localhost:4567/">Home</a></li>
   <li><a class="active"href="http://localhost:4567/rules">Rules</a></li>
   <li><a href="http://localhost:4567/playgame">Play Game</a></li>
   <li><a href="http://localhost:4567/minedminds">Mined Minds</a></li>
 </ul>
-<a href="javascript:gotoshow()"><img src="rules.png" name="slide" border=0 width=300 height=375></a>
-<script>
-<!--
-//configure the paths of the images, plus corresponding target links
-slideshowimages("rules.png")
-slideshowlinks("https://en.wikipedia.org/wiki/Tic-tac-toe#Strategy")
-//configure the speed of the slideshow, in miliseconds
-var slideshowspeed=4000
-var whichlink=0
-var whichimage=0
-function slideit(){
-if (!document.images)
-return
-document.images.slide.src=slideimages[whichimage].src
-whichlink=whichimage
-if (whichimage<slideimages.length-1)
-whichimage++
-else
-whichimage=0
-setTimeout("slideit()",slideshowspeed)
-}
-slideit()
-//-->
-</script>
+<A HREF="https://en.wikipedia.org/wiki/Tic-tac-toe#Strategy"><IMG SRC="rules.png" ALT="Rules"WIDTH=250 HEIGHT=200></A>
 
 <HTML>
 <head>
@@ -94,13 +44,12 @@ slideit()
 
 <body bgcolor="blue" text="red">
 
-<marquee><font face="Times New Roman" size="6">To Learn more about The Rules of Tic Tac Toe Click on the Rule Book Above!!</font></marquee>
+<marquee><font face="consolas" size="6">To Learn more about The Rules of Tic Tac Toe Click on the Rule Book Above!!</font></marquee>
 
 </body>
 </HTML>
 
 </script>
-<p align="center"><font face="arial" size="-2">This Page was created by Mined Minds</font><br>
-<font face="arial, helvetica" size="-2"><a href="http://minedminds.org">Click to Visit Mined Minds web page</a></font></p>
+<p align="center"><font face="consolas" size="2">This Page was created by Mined Minds</font><br>
+<font face="consolas, consolas" size="2"><a href="mailto:info@minedminds.org">Contact Us!</a></font></p>
 </body>
-

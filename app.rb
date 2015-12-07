@@ -1,12 +1,14 @@
 require 'sinatra'
 require 'rubygems'
 
+
+
 get '/' do
   erb :index
 end
 
 get '/rules' do
-  @title = 'Tic Tac Toe Rules'
+  #@title = 'Tic Tac Toe Rules'
   erb :rules
 end
 
