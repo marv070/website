@@ -4,7 +4,7 @@ require 'rubygems'
 
 
 get '/' do
-  erb :index
+   erb :index
 end
 
 get '/rules' do
