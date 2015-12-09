@@ -21,6 +21,7 @@ class App_test < Minitest::Test
     get '/'
     assert last_response.ok?
     assert last_response.body.include?('slideshowimages("mm.png","rules.png","ttt.png")')
+    assert last_response.body.include?('slideshowlinks("http://localhost:4567/minedminds","http://localhost:4567/rules","http://localhost:4567/playgame","","")')
   end
 
 
