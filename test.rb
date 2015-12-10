@@ -12,14 +12,14 @@ class App_test < Minitest::Test
   end
 
 
-  def test_it_redirects_to_erb_index
+  def test_for_index_erb
     get '/'
     assert last_response.ok?
     assert last_response.body.include?('slideshowimages("mm.png","rules.png","ttt.png")')
     assert last_response.body.include?('slideshowlinks("http://localhost:4567/minedminds","http://localhost:4567/rules","http://localhost:4567/playgame","","")')
     assert last_response.body.include?('class="active"href="http://localhost:4567/">Home')
   end
-
+  
 
   def test_it_redirects_to_rules_erb
     get '/rules'
@@ -45,6 +45,31 @@ class App_test < Minitest::Test
     assert_equal "http://example.org/minedminds",last_request.url
     assert last_response.body.include?('class="active" href="http://localhost:4567/minedminds">Mined Minds')
     assert last_response.body.include?('IMG SRC="mm.png"')
+    #assert_equal '"https://www.facebook.com/MinedMinds"', last_response.body
+  end
+
+  def test_for_pictures1
+    get '/minedminds'
+    pictures = load_pictures
+    assert pictures.count > 0
+  end
+  
+  def test_for_pictures2
+    get '/playgame'
+    pictures = load_pictures
+    assert pictures.count > 0
+  end
+
+  def test_for_pictures3
+    get '/rules'
+    pictures = load_pictures
+    assert pictures.count > 0
+  end
+
+  def test_for_pictures4
+    get '/index'
+    pictures = load_pictures
+    assert pictures.count > 0
   end
 
 
@@ -55,15 +80,3 @@ end
 
 
 
-# ENV['RACK_ENV'] = 'test'
-
-# require 'minitest/autorun'
-# require 'rack/test'
-
-# require_relative 'app.rb'
-
-# include Rack::Test::Methods
-
-# def app
-#   Sinatra::Application
-# end

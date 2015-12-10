@@ -3,6 +3,10 @@ require 'rubygems'
 
 
 
+def load_pictures
+  Dir.glob("public*")
+end
+
 get '/' do
    erb :index
 end
