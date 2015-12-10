@@ -1,10 +1,12 @@
 ENV['RACK_ENV'] = 'test'
-
+require './app'
 require 'minitest/autorun'
 require 'rack/test'
-require_relative 'app.rb'
+require 'tilt/erb'
+#require_relative 'app.rb'
 
-class App_test < Minitest::Test
+
+class MyTest < Minitest::Test
   include Rack::Test::Methods
 
   def app
@@ -51,25 +53,25 @@ class App_test < Minitest::Test
   def test_for_pictures1
     get '/minedminds'
     pictures = load_pictures
-    assert pictures.count > 0
+    assert pictures.length > 0, "There are no pictures" #message displayed when assertion is false
   end
   
   def test_for_pictures2
     get '/playgame'
     pictures = load_pictures
-    assert pictures.count > 0
+    assert pictures.length > 0, "There are no pictures" #message displayed when assertion is false 
   end
 
   def test_for_pictures3
     get '/rules'
     pictures = load_pictures
-    assert pictures.count > 0
+    assert pictures.length > 0, "There are no pictures" #message displayed when assertion is false 
   end
 
   def test_for_pictures4
     get '/index'
     pictures = load_pictures
-    assert pictures.count > 0
+    assert pictures.length > 0, "There are no pictures" #message displayed when assertion is false 
   end
 
 

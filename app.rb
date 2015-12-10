@@ -4,7 +4,7 @@ require 'rubygems'
 
 
 def load_pictures
-  Dir.glob("public*")
+  Dir.glob("public/*.{png,PNG,jpg,JPG}")
 end
 
 get '/' do
