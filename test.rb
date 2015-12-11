@@ -74,6 +74,13 @@ class MyTest < Minitest::Test
     assert pictures.length > 0, "There are no pictures" #message displayed when assertion is false 
   end
 
+  def test_for_home_index
+    get '/'
+    assert last_response.ok?
+    assert last_response.body.include?("banner2.jpg")
+  end
+
+
 
 end
 
