@@ -21,7 +21,6 @@ class MyTest < Minitest::Test
     assert last_response.body.include?('slideshowlinks("http://localhost:4567/minedminds","http://localhost:4567/rules","http://localhost:4567/playgame","","")')
     assert last_response.body.include?('class="active"href="http://localhost:4567/">Home')
   end
-  
 
   def test_it_redirects_to_rules_erb
     get '/rules'
@@ -80,6 +79,24 @@ class MyTest < Minitest::Test
     assert last_response.body.include?("banner2.jpg")
   end
 
+end
+
+class NotFound < Minitest::Test
+  include Rack::Test::Methods
+
+  def app
+    Sinatra::Application
+  end
+
+  def test_it_is_a_404 #does root exist??
+    get '/starter_page'
+    assert_equal 404, last_response.status
+  end
+
+  def test_custom_404
+    get '/starter_page'
+    assert_equal "<h1>Not Found</h1>", last_response.body
+  end
 
 
 end
