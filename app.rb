@@ -8,7 +8,7 @@ def load_pictures
 end
 
 get '/' do
-   @pictures = load_pictures
+   #@pictures = load_pictures
    erb :index
 end
 

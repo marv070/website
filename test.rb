@@ -12,7 +12,7 @@ class MyTest < Minitest::Test
   def app
     Sinatra::Application
   end
-
+  
 
   def test_for_index_erb
     get '/'
@@ -79,6 +79,7 @@ class MyTest < Minitest::Test
     assert last_response.body.include?("banner2.jpg")
   end
 
+
 end
 
 class NotFound < Minitest::Test
@@ -87,19 +88,14 @@ class NotFound < Minitest::Test
   def app
     Sinatra::Application
   end
-
+  
   def test_it_is_a_404 #does root exist??
     get '/starter_page'
     assert_equal 404, last_response.status
   end
 
-  def test_custom_404
-    get '/starter_page'
-    assert_equal "<h1>Not Found</h1>", last_response.body
-  end
+end 
 
-
-end
 
 
 
