@@ -18,14 +18,13 @@ class MyTest < Minitest::Test
     get '/'
     assert last_response.ok?
     assert last_response.body.include?('slideshowimages("mm.png","rules.png","ttt.png")')
-    assert last_response.body.include?('slideshowlinks("http://localhost:4567/minedminds","http://localhost:4567/rules","http://localhost:4567/playgame","","")')
-    assert last_response.body.include?('class="active"href="http://localhost:4567/">Home')
+    assert last_response.body.include?('slideshowlinks("http://localhost:4567/minedminds","http://localhost:4567/rules","http://localhost:4567/playgame")')
   end
 
   def test_it_redirects_to_rules_erb
     get '/rules'
     assert last_response.ok?
-    assert last_response.body.include?('IMG SRC="rules.png"')
+    assert last_response.body.include?('href="javascript:gotoshow()"><img src="rules.png" ')
     assert last_response.body.include?('"https://en.wikipedia.org/wiki/Tic-tac-toe#Strategy"')
     assert last_response.body.include?('class="active"href="http://localhost:4567/rules">Rules')
     assert_equal "http://example.org/rules",last_request.url
@@ -45,7 +44,7 @@ class MyTest < Minitest::Test
     assert last_response.ok?
     assert_equal "http://example.org/minedminds",last_request.url
     assert last_response.body.include?('class="active" href="http://localhost:4567/minedminds">Mined Minds')
-    assert last_response.body.include?('IMG SRC="mm.png"')
+    assert last_response.body.include?('img src="banner2.jpg"')
     #assert_equal '"https://www.facebook.com/MinedMinds"', last_response.body
   end
 
