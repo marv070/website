@@ -17,7 +17,7 @@ class MyTest < Minitest::Test
   def test_for_index_erb
     get '/'
     assert last_response.ok?
-    assert last_response.body.include?('slideshowimages("mm.png","rules.png","ttt.png")')
+    assert last_response.body.include?('slideshowimages("mm.png","rules.png","board.png")')
     assert last_response.body.include?('slideshowlinks("http://localhost:4567/minedminds","http://localhost:4567/rules","http://localhost:4567/playgame")')
   end
 
@@ -36,7 +36,7 @@ class MyTest < Minitest::Test
     assert last_response.ok?
     assert_equal "http://example.org/playgame",last_request.url
     assert last_response.body.include?('class="active"href="http://localhost:4567/playgame">Play Game')
-    assert last_response.body.include?('slideshowimages("ttt.png")')
+    assert last_response.body.include?('slideshowimages("board.png")')
   end
 
   def test_it_redirects_to_minedminds_erb
