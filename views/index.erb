@@ -1,134 +1,81 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Welcome to Mined Minds</title>
-    <style>
-    nav {
-  list-style-type: none;
-  margin: 0 auto;
-  background-color: #696969;
-  text-align: center;
-}
-li {
-  float: center;
-}
-li{
-  color: #FFFFFF;
-  display: inline-block;
-  
-  text-align: center;
-  margin: 12px 14px;
-  /*border-width: 5px;
-  border-style: double;*/
-  /*border-color: #214a97;*/
-  padding: 14px 16px;
-  text-decoration: none;
-}
-      a:hover:not(.active) {
-      background-color: #008B8B;
-    }
-    .active {
-    background-color:#0000FF;
-    }
-  section {
-  width: 70%;
-  margin: auto;
-  text-align: center;
-}
-  section img {
-  max-width: 40%;
-  padding-bottom: 10px;
-}
-  footer {
-  text-align: center;
-  font: consolas;
-  font-size: 2
-} 
-  </style>
-  </head>
-  <body bgcolor="3399FF">
-    <header>
-    <a href="http://minedminds.org" target="_new">
-    <center><img src="banner2.jpg"WIDTH=300 HEIGHT=100></center>
-    </a>
-      <nav>
-        <ul>
-          <li><a class="active" href="http://localhost:4567/">Home</a></li>
-          <li><a href="http://localhost:4567/rules">Rules</a></li>
-          <li><a href="http://localhost:4567/playgame">Play Game</a></li>
-          <li><a href="http://localhost:4567/minedminds">Mined Minds</a></li>
-        </ul>
-      </nav>
-    </header>
-  <section>
-  <script language="JavaScript1.1">
-    <!--
-    var slideimages=new Array()
-    var slidelinks=new Array()
-    function slideshowimages(){
-    for (i=0;i<slideshowimages.arguments.length;i++){
-    slideimages[i]=new Image()
-    slideimages[i].src=slideshowimages.arguments[i]
-    }
-    }
-  function slideshowlinks(){
-  for (i=0;i<slideshowlinks.arguments.length;i++)
-  slidelinks[i]=slideshowlinks.arguments[i]
-  }
-  function gotoshow(){
-    if (!window.winslide||winslide.closed)
-    winslide=window.open(slidelinks[whichlink])
-  else
-    winslide.location=slidelinks[whichlink]
-    winslide.focus()
-  }
-//-->
-  </script>
 
+ 
 
 <br>
 <br>
-  <a href="javascript:gotoshow()"><img src="mm.png" name="slide" border=0 width=300 height=375></a>
-  <script>
+<script language="JavaScript1.1">
 <!--
-//configure the paths of the images, plus corresponding target links
-  slideshowimages("mm.png","rules.png","board.png")
-  slideshowlinks("http://localhost:4567/minedminds","http://localhost:4567/rules","http://localhost:4567/playgame")
-//configure the speed of the slideshow, in miliseconds
-  var slideshowspeed=4000
-  var whichlink=0
-  var whichimage=0
-  function slideit(){
-    if (!document.images)
-  return
-  document.images.slide.src=slideimages[whichimage].src
-  whichlink=whichimage
-    if (whichimage<slideimages.length-1)
-      whichimage++
-    else
-      whichimage=0
-  setTimeout("slideit()",slideshowspeed)
-  }
-  slideit()
+var slideimages=new Array()
+var slidelinks=new Array()
+function slideshowimages(){
+for (i=0;i<slideshowimages.arguments.length;i++){
+slideimages[i]=new Image()
+slideimages[i].src=slideshowimages.arguments[i]
+}
+}
+function slideshowlinks(){
+for (i=0;i<slideshowlinks.arguments.length;i++)
+slidelinks[i]=slideshowlinks.arguments[i]
+}
+function gotoshow(){
+if (!window.winslide||winslide.closed)
+winslide=window.open(slidelinks[whichlink])
+else
+winslide.location=slidelinks[whichlink]
+winslide.focus()
+}
 //-->
 </script>
-  </section>
-
-  <div>
-
-    <body bgcolor="0066FF" text="#FFFFFF">
-
-    <marquee><font face="Verdana" size="6">Click on a pic or a link from the menu bar above!!</font></marquee>
-
-  </div>
+</head>
 
 
-<footer>
-    This Page was created by Mined Minds</font><br>
-    <font face="Verdana, Verdana" size="2"><a href="mailto:info@minedminds.org">Contact Us!</a></font></p>
-</footer>
+<br>
+<br>
+<font face="Consolas" size="6" color = "33FF33"><center>"WELCOME TO ARE TIC TAC TOE WEB PAGE!!<center></font><br>
+<a href="javascript:gotoshow()"><center><img src="mm.png" name="slide" border=0 width=300 height=375></center></a>
+<script>
+<!--
+//configure the paths of the images, plus corresponding target links
+slideshowimages("mm.png","rules.png","board.png")
+slideshowlinks("/minedminds","/rules","/playgame")
+//configure the speed of the slideshow, in miliseconds
+var slideshowspeed=4000
+var whichlink=0
+var whichimage=0
+function slideit(){
+if (!document.images)
+return
+document.images.slide.src=slideimages[whichimage].src
+whichlink=whichimage
+if (whichimage<slideimages.length-1)
+  whichimage++
+else
+  whichimage=0
+setTimeout("slideit()",slideshowspeed)
+}
+slideit()
+//-->
+</script>
+
+<HTML>
+  <head>
+    <title>hey</title>
+  </head>
+
+  <body bgcolor="0066FF" text="ffffff">
+
+<marquee><font face="Consolas" size="6">Click on a pic or a link from the menu bar above!!</font></marquee>
+
 </body>
-</html>
+</HTML>
+
+</script>
+
+</body>
+
+
 
 
 

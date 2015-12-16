@@ -1,5 +1,61 @@
 <!DOCTYPE html>
 <html>
-  <head><title><%= @title %></title></head>
-  <body><%=  yield %></body>
+  <head>
+  	<title>Welcome to Mined Minds</title>
+    <style>
+    nav {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #696969;
+    text-align: center;
+}
+li {
+    float: center;
+}
+li{
+	border-right: 1px solid #bbb;
+    display: inline-block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+a:hover:not(.active) {
+    background-color: #008B8B;
+}
+.active {
+background-color:#0000FF;
+}
+</style>
+  </head>
+  <body bgcolor="3399FF">
+    <header>
+    <a href="http://minedminds.org" target="_new">
+    <center><img src="banner2.jpg"WIDTH=300 HEIGHT=100></center>
+    </a>
+      <nav>
+        <ul>
+          <li><a href="http://localhost:4567/">Home</a></li>
+          <li><a href="http://localhost:4567/rules">Rules</a></li>
+          <li><a href="http://localhost:4567/playgame">Play Game</a></li>
+          <li><a href="http://localhost:4567/minedminds">Mined Minds</a></li>
+        </ul>
+      </nav>
+    </header>
+  
+  
+  
+  
+  
+  <%=  yield %>
+  </body>
+  
+  <footer>
+  <p align="center"><font face="consolas" size="2">This Page was created by Mined Minds</font><br>
+<font face="consolas, consolas" size="2"><a href="mailto:info@minedminds.org">Contact Us!</a></a></font></p>
+</footer>
 </html>
+<p align="center"><font face="consolas" size="2">Status API Training Shop Blog About Pricing<br>
+© 2015 GitHub, Inc. Terms Privacy Security Contact Help</font><br>
