@@ -17,16 +17,16 @@ class MyTest < Minitest::Test
   def test_for_index_erb
     get '/'
     assert last_response.ok?
-    assert last_response.body.include?('slideshowimages("mm.png","rules.png","board.png")')
-    assert last_response.body.include?('slideshowlinks("http://localhost:4567/minedminds","http://localhost:4567/rules","http://localhost:4567/playgame")')
+    assert last_response.body.include?('slideshowimages("mm.png","rules2.png.gif","board.png")')
+    assert last_response.body.include?('slideshowlinks("/minedminds","/rules","/playgame")')
   end
 
   def test_it_redirects_to_rules_erb
     get '/rules'
     assert last_response.ok?
-    assert last_response.body.include?('href="javascript:gotoshow()"><img src="rules.png" ')
+    assert last_response.body.include?('"https://en.wikipedia.org/wiki/Tic-tac-toe#Strategy"><center><IMG SRC="rules2.png.gif" ')
     assert last_response.body.include?('"https://en.wikipedia.org/wiki/Tic-tac-toe#Strategy"')
-    assert last_response.body.include?('class="active"href="http://localhost:4567/rules">Rules')
+    assert last_response.body.include?('Learn how to play a perfect Tic Tac Toe game!!')
     assert_equal "http://example.org/rules",last_request.url
   end
 
@@ -35,15 +35,15 @@ class MyTest < Minitest::Test
     get '/playgame'
     assert last_response.ok?
     assert_equal "http://example.org/playgame",last_request.url
-    assert last_response.body.include?('class="active"href="http://localhost:4567/playgame">Play Game')
-    assert last_response.body.include?('slideshowimages("board.png")')
+    assert last_response.body.include?('"/tictactoe"><center><IMG SRC="board.png" ALT="Play Game"')
+    assert last_response.body.include?('IMG SRC="board.png"')
   end
 
   def test_it_redirects_to_minedminds_erb
     get '/minedminds'
     assert last_response.ok?
     assert_equal "http://example.org/minedminds",last_request.url
-    assert last_response.body.include?('class="active" href="http://localhost:4567/minedminds">Mined Minds')
+    assert last_response.body.include?('"http://www.minedminds.org"><center><IMG SRC="mm.png" ALT="Mined Minds"')
     assert last_response.body.include?('img src="banner2.jpg"')
     #assert_equal '"https://www.facebook.com/MinedMinds"', last_response.body
   end
